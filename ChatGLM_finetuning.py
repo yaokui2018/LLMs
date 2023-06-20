@@ -15,8 +15,8 @@ from transformers import AutoTokenizer, AutoModel, AutoConfig
 # config
 model_name_or_path = "chatglm-6b"  # 模型存放路径 或 huggingface模型名
 # CHECKPOINT_PATH = 'chatglm-6b/fine_tune/output/adgen-chatglm-6b-pt-128-2e-2/checkpoint-3000'  # P-tuning checkout文件路径
-CHECKPOINT_PATH = 'chatglm-6b/fine_tune/output/spamclassify-chatglm-6b-pt-4-2e-2/checkpoint-1000'  # P-tuning checkout文件路径
-PRE_SEQ_LEN = 4
+CHECKPOINT_PATH = 'chatglm-6b/fine_tune/output/spamclassify-chatglm-6b-pt-4-2e-2/checkpoint-100'  # P-tuning checkout文件路径
+PRE_SEQ_LEN = 128  # 这里序列长度需要和微调时候定义的序列长度一致
 
 tokenizer = AutoTokenizer.from_pretrained(model_name_or_path, trust_remote_code=True)
 config = AutoConfig.from_pretrained(model_name_or_path, trust_remote_code=True, pre_seq_len=PRE_SEQ_LEN)
