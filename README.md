@@ -1,10 +1,10 @@
-# LLM（Large Language Model）
+# LLMs（Large Language Models）
 ![GitHub last commit](https://img.shields.io/github/last-commit/yaokui2018/LLM)
 ![](https://img.shields.io/badge/python-3.7-blue)
 
 一些大语言模型的使用示例。
 
-## ChatGLM
+## 1、ChatGLM
 ChatGLM-6B 是一个开源的、支持中英双语问答的对话语言模型，基于 General Language Model (GLM) 架构，具有 62 亿参数。结合模型量化技术，用户可以在消费级的显卡上进行本地部署（INT4 量化级别下最低只需 6GB 显存）。ChatGLM-6B 使用了和 ChatGLM 相同的技术，针对中文问答和对话进行了优化。经过约 1T 标识符的中英双语训练，辅以监督微调、反馈自助、人类反馈强化学习等技术的加持，62 亿参数的 ChatGLM-6B 已经能生成相当符合人类偏好的回答。
 [[GitHub](https://github.com/THUDM/ChatGLM-6B)]
 - 依赖环境
@@ -55,3 +55,33 @@ ChatGLM-6B 是一个开源的、支持中英双语问答的对话语言模型，
   >> python ChatGLM_finetuning.py
   ```
 
+
+## 2、VisualGLM
+VisualGLM-6B 是一个开源的，支持图像、中文和英文的多模态对话语言模型，语言模型基于 ChatGLM-6B，具有 62 亿参数；图像部分通过训练 BLIP2-Qformer 构建起视觉模型与语言模型的桥梁，整体模型共78亿参数。
+[[GitHub](https://github.com/THUDM/VisualGLM-6B)]
+- 依赖环境
+    ```  
+  transformers==4.27.1
+  torch==1.10.1
+  protobuf==3.20.0
+  cpm_kernels==1.0.11
+  sentencepiece==0.1.99
+  pandas==1.5.2
+  
+  einops==0.6.1
+  SwissArmyTransformer==0.3.7
+  datasets==2.13.0
+    ```
+  注：sat库安装时的名称是“SwissArmyTransformer”。
+
+  Windows上安装可能会报错，可以使用以下指令安装：`pip install --no-deps "SwissArmyTransformer>=0.3.6" -i https://pypi.tuna.tsinghua.edu.cn/simple`
+
+  <br/>
+
+- 使用
+  ```
+  >> python VisualGLM.py
+  ```
+  ![visualglm 运行效果](imgs/visualglm.png)
+
+详细使用说明：[THUDM/VisualGLM-6B](https://github.com/THUDM/VisualGLM-6B)

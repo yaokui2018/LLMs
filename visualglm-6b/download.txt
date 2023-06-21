@@ -1,0 +1,14 @@
+
+模型文件下载说明
+
+一、在线调用
+1. 将代码中加载模型位置改成 HuggingFace 仓库模型名 ”THUDM/visualglm-6b”，示例如下：
+>>> tokenizer = AutoTokenizer.from_pretrained("THUDM/visualglm-6b", trust_remote_code=True)
+>>> model = AutoModel.from_pretrained("THUDM/visualglm-6b", trust_remote_code=True).half().cuda()
+2. 删除本文件夹后，直接运行代码即可。
+
+
+二、本地使用
+下载模型文件后存放在本文件夹即可。
+1、官方下载：https://github.com/THUDM/VisualGLM-6B#%E4%BD%BF%E7%94%A8
+2、网盘下载：https://pan.quark.cn/s/520eef0a20d8
