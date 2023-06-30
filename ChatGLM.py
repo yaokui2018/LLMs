@@ -4,8 +4,11 @@
 
 from transformers import AutoTokenizer, AutoModel
 
-tokenizer = AutoTokenizer.from_pretrained("chatglm-6b", trust_remote_code=True)
-model = AutoModel.from_pretrained("chatglm-6b", trust_remote_code=True).quantize(8).half().cuda()
+# 模型名：chatglm-6b / chatglm2-6b
+MODEL = "chatglm2-6b"
+
+tokenizer = AutoTokenizer.from_pretrained(MODEL, trust_remote_code=True)
+model = AutoModel.from_pretrained(MODEL, trust_remote_code=True).quantize(8).half().cuda()
 
 response, history = model.chat(tokenizer, "你好", history=[])
 print(response)

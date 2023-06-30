@@ -1,0 +1,14 @@
+
+模型文件下载说明
+
+一、在线调用
+1. 将代码中加载模型位置改成 HuggingFace 仓库模型名 ”THUDM/chatglm2-6b”，示例如下：
+>>> tokenizer = AutoTokenizer.from_pretrained("THUDM/chatglm2-6b", trust_remote_code=True)
+>>> model = AutoModel.from_pretrained("THUDM/chatglm2-6b", trust_remote_code=True).half().cuda()
+2. 删除本文件夹后，直接运行代码即可。
+
+
+二、本地使用
+下载模型文件后存放在本文件夹即可。
+1、官方下载：https://github.com/THUDM/ChatGLM2-6B#%E4%BB%8E%E6%9C%AC%E5%9C%B0%E5%8A%A0%E8%BD%BD%E6%A8%A1%E5%9E%8B
+2、网盘下载：https://pan.quark.cn/s/00db3c3a8356
