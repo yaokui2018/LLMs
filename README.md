@@ -1,6 +1,6 @@
 # LLMs（Large Language Models）
 ![GitHub last commit](https://img.shields.io/github/last-commit/yaokui2018/LLM)
-![](https://img.shields.io/badge/python-3.7-blue)
+![](https://img.shields.io/badge/python-3.9-blue)
 
 一些大语言模型的使用示例。
 
@@ -10,7 +10,7 @@ ChatGLM-6B 是一个开源的、支持中英双语问答的对话语言模型，
 - 依赖环境
     ```  
   transformers==4.27.1
-  torch==1.10.1
+  torch==1.13.1
   protobuf==3.20.0
   cpm_kernels==1.0.11
   sentencepiece==0.1.99
@@ -18,7 +18,7 @@ ChatGLM-6B 是一个开源的、支持中英双语问答的对话语言模型，
     ```
 - 使用
   ```
-  >> python ChatGLM.py
+  >> python chatglm.py
   ```
   ![chatglm 运行效果](imgs/chatglm.png)
 
@@ -52,7 +52,7 @@ ChatGLM-6B 是一个开源的、支持中英双语问答的对话语言模型，
 
 - 使用
   ```bash
-  >> python ChatGLM_finetuning.py
+  >> python chatglm_finetuning.py
   ```
 
 
@@ -75,15 +75,15 @@ VisualGLM-6B 是一个开源的，支持图像、中文和英文的多模态对�
 - 依赖环境
     ```  
   transformers==4.27.1
-  torch==1.10.1
+  torch==1.13.1
   protobuf==3.20.0
   cpm_kernels==1.0.11
   sentencepiece==0.1.99
   pandas==1.5.2
   
+  datasets==2.13.0
   einops==0.6.1
   SwissArmyTransformer==0.3.7
-  datasets==2.13.0
     ```
   注：sat库安装时的名称是“SwissArmyTransformer”。
 
@@ -93,8 +93,42 @@ VisualGLM-6B 是一个开源的，支持图像、中文和英文的多模态对�
 
 - 使用
   ```
-  >> python VisualGLM.py
+  >> python visualglm.py
   ```
   ![visualglm 运行效果](imgs/visualglm.png)
 
 详细使用说明：[THUDM/VisualGLM-6B](https://github.com/THUDM/VisualGLM-6B)
+
+
+
+## 4、Qwen
+通义千问-7B（Qwen-7B）是阿里云研发的通义千问大模型系列的70亿参数规模的模型。Qwen-7B是基于Transformer的大语言模型, 在超大规模的预训练数据上进行训练得到。预训练数据类型多样，覆盖广泛，包括大量网络文本、专业书籍、代码等。同时，在Qwen-7B的基础上，使用对齐机制打造了基于大语言模型的AI助手Qwen-7B-Chat。
+[[GitHub](https://github.com/QwenLM/Qwen-7B)]
+- 依赖环境
+    ```  
+  transformers==4.31.0
+  torch==1.13.1
+  einops=0.6.1
+  
+  tiktoken==0.4.0
+  accelerate==0.21.0
+  # flash_attn==1.0.8
+    ```  
+
+    注：flash_attn库安装时可能会报错（可不装）：
+
+     1、`error: Microsoft Visual C++ 14.0 or greater is required. Get it with "Microsoft C++ Build Tools": https://visualstudio.microsoft.com/visual-cpp-build-tools/`
+        
+   需要安装c++环境。 可参考：https://blog.csdn.net/bluishglc/article/details/128889935
+
+   2、之后使用以下指令安装：`pip install -i https://pypi.tuna.tsinghua.edu.cn/simple flash_attn==1.0.8  --no-build-isolation`
+
+
+- 使用
+  ```
+  >> python qwen.py
+  ```
+  ![Qwen 运行效果](imgs/qwen.png)
+  
+
+详细使用说明：[QwenLM/Qwen-7B](https://github.com/QwenLM/Qwen-7B)

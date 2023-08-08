@@ -1,0 +1,13 @@
+
+模型文件下载说明
+
+一、在线调用
+1. 将代码中 MODEL 改成 HuggingFace 仓库模型名 ”Qwen/Qwen-7B-Chat”，示例如下：
+>>> MODEL = "Qwen/Qwen-7B-Chat"
+2. 删除本文件夹后，直接运行代码即可。
+
+
+二、本地使用
+下载模型文件后存放在本文件夹即可。
+1、官方下载：https://huggingface.co/Qwen/Qwen-7B-Chat
+2、网盘下载：https://pan.quark.cn/s/561e93c033d4
