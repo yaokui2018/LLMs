@@ -1,17 +1,18 @@
 @echo off
 
-set PRE_SEQ_LEN=1600
+set PRE_SEQ_LEN=128
 set LR=2e-2
 set NUM_GPUS=1
 set MAX_STEP=3000
+set save_steps=100
 
-set MODEL_PATH=..\\..\\chatglm2-6b
+set MODEL_PATH=D:\code\chatglm2-6b-32k
 
-set TRAIN_FILE=walkthough/train.json
-set DEV_FILE=walkthough/dev.json
-set PROMPT_COLUMN=title
-set RESPONSE_COLUMN=content
-set OUT_PATH=output/walkthough-chatglm2-6b-pt-%PRE_SEQ_LEN%-%LR%
+set TRAIN_FILE=role/train.json
+set DEV_FILE=role/dev.json
+set PROMPT_COLUMN=question
+set RESPONSE_COLUMN=answer
+set OUT_PATH=output/role-chatglm2-32k-6b-pt-%PRE_SEQ_LEN%-%LR%
 
 
 REM torchrun --standalone --nnodes=1 --nproc-per-node=%NUM_GPUS%
@@ -35,8 +36,8 @@ python main.py ^
     --predict_with_generate ^
     --max_steps %MAX_STEP% ^
     --logging_steps 10 ^
-    --save_steps 1000 ^
+    --save_steps %save_steps% ^
     --learning_rate %LR% ^
-    --pre_seq_len %PRE_SEQ_LEN% ^
-    --quantization_bit 4
+    --pre_seq_len %PRE_SEQ_LEN%
+    REM --quantization_bit 4
 

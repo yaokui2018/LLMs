@@ -5,7 +5,7 @@
 from transformers import AutoTokenizer, AutoModel
 
 # 模型名：chatglm-6b / chatglm2-6b
-MODEL = "D:\code\chatglm2-6b-32k"
+MODEL = "chatglm2-6b"
 
 tokenizer = AutoTokenizer.from_pretrained(MODEL, trust_remote_code=True)
 model = AutoModel.from_pretrained(MODEL, trust_remote_code=True).quantize(8).half().cuda()
