@@ -67,6 +67,7 @@ ChatGLM2-6B 是开源中英双语对话模型 ChatGLM-6B 的第二代版本，�
 
 
   ![chatglm2 运行效果](imgs/chatglm2.png)
+  ![chatglm2-32k ptuning](imgs/chatglm2-ptuning.png)
 **（使用方式同ChatGLM ↑↑↑）**
 
 ## 3、VisualGLM
